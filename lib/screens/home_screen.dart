@@ -239,35 +239,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           ),
           child: Transform.scale(
             scale: 1.0 + (_pulseController.value * 0.05),
-            child: Container(
-              width: isMobile ? 100 : 140,
-              height: isMobile ? 100 : 140,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    const Color(0xFFFF6B6B).withOpacity(0.2),
-                    const Color(0xFFFFE66D).withOpacity(0.2),
-                  ],
-                ),
-                borderRadius: BorderRadius.circular(30),
-                border: Border.all(
-                  color: themeProvider.getBorderColor(context),
-                  width: 2,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFFFF6B6B).withOpacity(0.2),
-                    blurRadius: 20,
-                    spreadRadius: 2,
-                  ),
-                ],
-              ),
-              child: Icon(
-                Icons.brush,
-                size: isMobile ? 50 : 70,
-                color: const Color(0xFFFF6B6B),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Image.asset(
+                "assets/images/sagar_arts_logo.jpeg",
+                width: isMobile ? 100 : 140,
+                height: isMobile ? 100 : 140,
               ),
             ),
           ),
